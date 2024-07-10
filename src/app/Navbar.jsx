@@ -9,8 +9,9 @@ import { MdWork } from "react-icons/md";
 import { FaNoteSticky } from "react-icons/fa6";
 import { FaUser,FaCaretDown } from "react-icons/fa";
 import { round } from './../../node_modules/@popperjs/core/dist/esm/utils/math';
+import { usePathname } from "next/navigation";
 export default function Navbar() {
-
+  const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
   
@@ -73,7 +74,11 @@ export default function Navbar() {
             <div className='flex justify-between w-[60%] text-white text-[20px]'>
 
             {MenuList.map((item, index) => (
-  <div key={index} className='flex items-center cursor-pointer mx-[10px] hover:underline underline-offset-1'>
+  <div key={index} className={`flex items-center cursor-pointer mx-[10px] ${
+    (pathname === '/' && index === 0) || (pathname === '/lesson' && index === 1) || (pathname === '/test' && index === 2) || (pathname === '/contact' && index === 3)
+      ? 'underline hover:underline-offset-1'
+      : 'hover:underline underline-offset-1'
+  }`}>
     {index === 1 ? (
       <div className='dropdown flex flex-col items-center' ref={dropdownRef}>
       <button 
