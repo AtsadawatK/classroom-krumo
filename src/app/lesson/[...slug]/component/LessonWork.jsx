@@ -9,7 +9,7 @@ import 'react-pdf/dist/esm/Page/TextLayer.css';
 import './sample.css';
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.mjs',
+  'pdfjs-dist/legacy/build/pdf.worker.min.mjs',
   import.meta.url
 ).toString();
 
