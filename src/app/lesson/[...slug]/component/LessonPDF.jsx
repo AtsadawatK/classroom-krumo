@@ -40,8 +40,7 @@ export default function LessonPDF({params}) {
   function nextPage() {
     changePage(1);
   } */
-
-    
+ 
     console.log("URLName :" ,PDFName)
     console.log("PDF List : ",PDFlist)
 
