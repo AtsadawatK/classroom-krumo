@@ -38,14 +38,14 @@ export default function SectionWelcome() {
   ]
   return (
     <>
-    <div className='flex justify-center pb-[50px]'>
+    <div className='flex justify-center pb-[50px] '>
     <div className='max-w-[1920px] '>
     <div className=' flex 2xl:mx-[0px] lg:mx-[80px] md:mx-[30px] xs:mx-[20px] mt-[20px] lg:text-[30px] md:text-[20px] xs:text-[14px] items-end '>ยินดีต้อนรับเข้าสู่เว็บไซต์ <div className='mx-[10px] lg:text-[30px] md:text-[20px] xs:text-[14px] items-center text-[blue]'>ห้องเรียนสังคมศึกษา</div></div>
     
 
     <div className="grid lg:grid-cols-2 xs:grid-cols-1 gap-6  2xl:mx-[0px] lg:mx-[80px] md:mx-[30px] xs:mx-[20px] mt-[20px]">
   <div className=''>
-    <div className=' font-semibold'>
+    <div className=' font-semibold '>
       คำอธิบายรายวิชา  รหัสวิชา 123456789
     </div>
     <div className=' mt-[10px]'>

@@ -29,7 +29,7 @@ export default function LessonPDF({params}) {
     setNumPages(numPages);
   }
 
-  function changePage(offset) {
+  /* function changePage(offset) {
     setPageNumber(prevPageNumber => prevPageNumber + offset);
   }
 
@@ -39,7 +39,9 @@ export default function LessonPDF({params}) {
 
   function nextPage() {
     changePage(1);
-  }
+  } */
+
+    
     console.log("URLName :" ,PDFName)
     console.log("PDF List : ",PDFlist)
 

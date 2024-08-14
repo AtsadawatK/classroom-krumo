@@ -66,7 +66,7 @@ const handleClickCloseMobileMenu = () => {
 
             {MenuList.map((item, index) => (
   <div key={index} className={`flex items-center cursor-pointer mx-[30px] ${
-    (pathname === '/' && index === 0) || (pathname === '/lesson' && index === 1) || (pathname === '/test' && index === 2) || (pathname === '/contact' && index === 3)
+    (pathname === '/' && index === 0) || (pathname === '/lesson' && index === 1) || (pathname === '/test' && index === 2) || (pathname === '/teacher' && index === 3)
       ? 'underline hover:underline-offset-1'
       : 'hover:underline underline-offset-1'
   }`}>

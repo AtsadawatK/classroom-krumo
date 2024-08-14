@@ -16,11 +16,7 @@ export const MenuList = [
         IconName : FcCandleSticks,
         link:'/lesson',
     },
-    {
-        MenuName : "แบบทดสอบ",
-        IconName : FcBusiness,
-        link:'/exam',
-    },
+    
 
     {
         MenuName : "ครูผู้สอน",
