@@ -57,7 +57,7 @@ const handleClickCloseMobileMenu = () => {
       
     />
             </div>
-            <p className='lg:text-[30px] md:text-[20px] xs:text-[16px] lg:px-[20px] xs:px-[10px]'>สื่อประสมอิเล็กทรอนิกส์</p>
+            <p className='lg:text-[30px] md:text-[20px] xs:text-[16px] lg:px-[20px] xs:px-[10px] cursor-pointer' onClick={() => { window.location.href="/";}}>สื่อประสมอิเล็กทรอนิกส์</p>
             </div>
 
 
@@ -66,7 +66,7 @@ const handleClickCloseMobileMenu = () => {
 
             {MenuList.map((item, index) => (
   <div key={index} className={`flex items-center cursor-pointer mx-[30px] ${
-    (pathname === '/' && index === 0) || (pathname === '/lesson' && index === 1) || (pathname === '/test' && index === 2) || (pathname === '/teacher' && index === 3)
+    (pathname === '/' && index === 0) || (pathname.startsWith('/lesson') && index === 1) || (pathname.startsWith('/teacher') && index === 2)
       ? 'underline hover:underline-offset-1'
       : 'hover:underline underline-offset-1'
   }`}>
@@ -122,8 +122,8 @@ const handleClickCloseMobileMenu = () => {
             <IoMenu style={{height:"30px",width:"30px",}}/>
             </div>
             <div
-                className={`fixed w-[100vw] z-[450] left-0 top-0 h-full border bg-[grey] opacity-25 ${menuMobileOpen ? '' : 'hidden'}`}
-            > </div>
+                className={`fixed w-[100vw] z-[450] left-0 top-0 h-full border bg-[grey] opacity-25 ${menuMobileOpen ? '' : 'hidden'} `}
+                onClick={handleClickCloseMobileMenu}> </div>
             <div 
   className={`fixed top-0 bottom-0 right-0 z-[500] md:w-[40vw] xs:w-[45vw] bg-[#FFFFFF] ${
     menuMobileOpen ? 'translate-x-0' : 'translate-x-full'
@@ -135,9 +135,13 @@ const handleClickCloseMobileMenu = () => {
 
           <div class="divide-y divide-solid border ">
   {MenuList.map((item, index) => (
-    index === 1 ? (
+ 
       <div key={index} class="flex flex-col">
-      <div   class="text-[black] flex text-[14px]  p-[10px] items-center pl-5">{item.MenuName} </div>
+      <div   class={`text-[black] flex text-[14px]  p-[10px] items-center pl-5 hover:bg-[grey] ${
+    (pathname === '/' && index === 0) || (pathname.startsWith('/lesson') && index === 1) || (pathname.startsWith('/teacher') && index === 2)
+      ? 'bg-[grey]'
+      : 'tranparents'
+  } `} onClick={() => { window.location.href = `${item.link}`;}}>{item.MenuName} </div>
       {/* {LessonList.map((text, index) => ( 
         <div key={index} class="flex" >
           <div class="md:p-[10px] xs:p-[5px] ml-[5px]">
@@ -147,9 +151,7 @@ const handleClickCloseMobileMenu = () => {
       </div>
     ))} */}
       </div>
-    ) : (
-      <div key={index} class="text-[black] flex  text-[14px] p-[10px] pl-5">{item.MenuName}</div>
-    )
+    
   ))}
 </div>
               </div>

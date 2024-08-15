@@ -48,23 +48,23 @@ if (!FilterLesson) {
   
   
       
-  <div className='2xl:px-[0px] lg:px-[80px] md:px-[30px] xs:px-[20px] w-full '>
-    <div className='text-[40px] pt-8'>
+  <div className='2xl:px-[0px] lg:px-[80px] md:px-[30px] xs:px-[20px] w-full  pb-5'>
+    <div className='lg:text-[40px] md:text-[25px] xs:text-[18px] pt-8'>
     {FilterLesson.title}
     </div>
-    <div className='text-[30px] pt-8'>
+    <div className='lg:text-[35px] md:text-[20px] xs:text-[16px] lg:pt-8 xs:pt-4'>
     สื่อการเรียนการสอน
     
     </div>
     <div className='text-[40px] border border-[#2F3645] w-[100%] mt-2 '>
-    <div className='grid grid-cols-5 '>
+    <div className='grid lg:grid-cols-5 sm:grid-cols-3 xs:grid-cols-2'>
        {FilterPDFLesson.map((item,index) => (
       <div key={index} className="flex justify-center items-center flex-col my-6" onClick={() => { window.open(`/lesson/${FilterLesson.urlLesson}/${item.name}`, "_blank");}}>
-        <div className='border w-[150px] h-[150px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]'>
+        <div className='border sm:w-[150px] sm:h-[150px] xs:w-[100px] xs:h-[100px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]'>
         <div>
       
-          <div>
-          <FcFile style={{width:"60px",height:"60px"}}/>
+        <div class="md:w-[60px] md:h-[60px] xs:w-[30px] xs:h-[30px]">
+          <FcFile style={{width:"100%",height:"100%"}}/>
           </div>
     </div>
           <div className='text-[12px] mt-[10px] text-center' >
@@ -78,9 +78,9 @@ if (!FilterLesson) {
 
 {FilterGameList.map((item, index) => (
   <div key={index} className="flex justify-center items-center flex-col my-6">
-    <div className='border w-[150px] h-[150px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]' onClick={() => { window.open(item.url) }}>
-      <div>
-        <FcPuzzle style={{ width: "60px", height: "60px" }} />
+    <div className='border sm:w-[150px] sm:h-[150px] xs:w-[100px] xs:h-[100px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]' onClick={() => { window.open(item.url) }}>
+    <div class="md:w-[60px] md:h-[60px] xs:w-[30px] xs:h-[30px]">
+        <FcPuzzle style={{ width: "100%", height: "100%" }} />
       </div>
       <div className='text-[12px] mt-[10px] text-center'>
         {item.name}
@@ -98,11 +98,11 @@ if (!FilterLesson) {
 
 {FilterVdoList.map((item,index) => (
       <div key={index} className="flex justify-center items-center flex-col my-6" >
-        <div className='border w-[150px] h-[150px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]' onClick={() => { window.open(item.url) }}>
+        <div className='border sm:w-[150px] sm:h-[150px] xs:w-[100px] xs:h-[100px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]' onClick={() => { window.open(item.url) }}>
         <div>
       
-          <div>
-          <FaYoutube style={{width:"60px",height:"60px",color:"red"}}/>
+        <div class="md:w-[60px] md:h-[60px] xs:w-[30px] xs:h-[30px]">
+          <FaYoutube style={{width:"100%",height:"100%",color:"red"}}/>
           </div>
     </div>
           <div className='text-[12px] mt-[10px] text-center' >
@@ -132,11 +132,11 @@ if (!FilterLesson) {
      link.click();
    }}
  >
-        <div className='border w-[150px] h-[150px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]'>
+        <div className='border sm:w-[150px] sm:h-[150px] xs:w-[100px] xs:h-[100px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]'>
         <div>
       
-          <div>
-          <FcVoicePresentation style={{width:"60px",height:"60px",color:"red"}}/>
+        <div class="md:w-[60px] md:h-[60px] xs:w-[30px] xs:h-[30px]">
+          <FcVoicePresentation style={{width:"100%",height:"100%",color:"red"}}/>
           </div>
     </div>
           <div className='text-[12px] mt-[10px] text-center' >
@@ -155,18 +155,18 @@ if (!FilterLesson) {
     </div>
     </div>
 
-    <div className='text-[30px] pt-8'>
+    <div className='lg:text-[35px] md:text-[20px] xs:text-[16px] pt-8'>
     ใบงานและแบบทดสอบ
     </div>
     <div className='text-[40px] border border-[#2F3645] w-[100%] mt-2'>
-    <div className='grid grid-cols-5'>
+    <div className='grid lg:grid-cols-5 sm:grid-cols-3 xs:grid-cols-2 '>
     {FilterWorkList .map((item,index) => (
       <div key={index} className="flex justify-center items-center flex-col my-6" onClick={() => { window.open (`/lesson/${FilterLesson.urlLesson}/work/${item.name}`,"_blank"); }}>
-        <div className='border w-[150px] h-[150px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]'>
+        <div className='border sm:w-[150px] sm:h-[150px] xs:w-[100px] xs:h-[100px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]'>
         <div>
       
-          <div>
-          <FcFile style={{width:"60px",height:"60px"}}/>
+          <div class="md:w-[60px] md:h-[60px] xs:w-[30px] xs:h-[30px]">
+          <FcFile style={{width:"100%",height:"100%"}}/>
           </div>
     </div>
           <div className='text-[12px] mt-[10px] text-center' >
@@ -181,11 +181,11 @@ if (!FilterLesson) {
 
 {FilterWorklink.map((item,index) => (
       <div key={index} className="flex justify-center items-center flex-col my-6" onClick={() => { window.location.href = item.url; }}>
-        <div className='border w-[150px] h-[150px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]'>
+        <div className='border sm:w-[150px] sm:h-[150px] xs:w-[100px] xs:h-[100px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]'>
         <div>
       
-          <div>
-          <FcLink style={{width:"60px",height:"60px"}}/>
+          <div class="md:w-[60px] md:h-[60px] xs:w-[30px] xs:h-[30px]">
+          <FcLink style={{width:"100%",height:"100%"}}/>
           </div>
     </div>
           <div className='text-[12px] mt-[10px] text-center' >

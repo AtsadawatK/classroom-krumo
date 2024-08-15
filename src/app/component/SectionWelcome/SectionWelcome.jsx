@@ -1,41 +1,16 @@
+"use client"
+
 import React from 'react'
 import lesson1 from '../../../assets/cover_lesson1.png'
 import lesson2 from '../../../assets/cover_lesson2.png'
 import lesson3 from '../../../assets/cover_lesson3.png'
 import lesson4 from '../../../assets/cover_lesson4.png'
+import { Recommendlesson } from "../../../dataLesson/DataLesson"
 import Image from 'next/image'
 export default function SectionWelcome() {
 
-  const Recommendlesson = [
-    {
-      image:lesson1,
-      label: "บทที่ 1",
-      title:"ทดสอบบที่ 1",
-      detail :"เนื้อหาทดสอบ 1"
-    },
-
-    {
-      image:lesson2,
-      label: "บทที่ 2",
-      title:"ทดสอบบที่ 2",
-      detail :"เนื้อหาทดสอบ 2"
-    },
-
-    {
-      image:lesson3,
-      label: "บทที่ 3",
-      title:"ทดสอบบที่ 3",
-      detail :"เนื้อหาทดสอบ 3"
-    },
-
-    {
-      image:lesson4,
-      label: "บทที่ 4",
-      title:"ทดสอบบที่ 4",
-      detail :"เนื้อหาทดสอบ 4"
-    },
-    
-  ]
+  
+  
   return (
     <>
     <div className='flex justify-center pb-[50px] '>
@@ -58,19 +33,20 @@ export default function SectionWelcome() {
 
 
     {Recommendlesson.map((text,index) => (
-    <div key={index} className='flex  rounded border cursor-pointer hover:border-[#56AEFF]'>
-      <div className="flex items-center  w-[40%]"><Image
+    <div key={index} className='flex  rounded border cursor-pointer hover:border-[#56AEFF]' onClick={() => {window.location.href = `/lesson/${text.link}`;}}>
+      <div className="flex items-center  w-[200px] pr-[10px]">
+        <Image
       src={text.image}
       alt="Picture of the author"
       style={{
         width: '100%',
-        height: 'auto',
+        height: '100%',
         objectFit:"cover"
       }}
     /></div>
-      <div className='p-[10px]'>
-        <div className="text-[20px] font-semibold">{text.label} {text.title}</div>
-        <div className=""></div>
+      <div className='w-[100%] p-[5px]'>
+        <div className="text-[20px] font-semibold">{text.label}</div>
+        <div className="w-[100%] lg:text-[16px] md:text-[14px] xs:text-[12px] ">{text.title}</div>
       </div>
     </div>
 ))}

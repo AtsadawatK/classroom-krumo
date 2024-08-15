@@ -487,3 +487,32 @@ export const PowerpointDowload = [
 ]
 
 
+export const Recommendlesson = [
+    {
+      image:lesson1,
+      label: "บทที่ 1",
+      title:"ประวัติและความสำคัญของพระพุทธศาสนา",
+      link:"episode1",
+    },
+
+    {
+      image:lesson2,
+      label: "บทที่ 2",
+      title:"พุทธประวัติ พระสาวก ศาสนิกชนตัวอย่างและชาดก",
+      link:"episode2",
+    },
+
+    {
+      image:lesson3,
+      label: "บทที่ 3",
+      title:"หลักธรรมทางพระพุทธศาสนา",
+      link:"episode3",
+    },
+
+    {
+      image:lesson4,
+      label: "บทที่ 4",
+      title:"พระไตรปิฎก และพุทธศาสนสุภาษิต",
+      link:"episode4",
+    },
+]

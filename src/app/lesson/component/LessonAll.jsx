@@ -15,11 +15,11 @@ export default function LessonAll() {
     </div>
     
     <div class="flex  justify-start  items-center max-w-[1920px] mx-auto">
-        <div class="flex 2xl:px-[0px] lg:px-[80px] md:px-[30px] xs:px-[20px] pt-5">
-    <div class="">
-        <FcSurvey style={{width:"50px",height:"50px"}}/>
+        <div class="flex 2xl:px-[0px] lg:px-[80px] md:px-[30px] xs:px-[20px] pt-5 items-center">
+        <div class="md:w-[50px] md:h-[50px] xs:w-[30px] xs:h-[30px]">
+        <FcSurvey style={{width:"100%",height:"100%"}}/>
         </div>
-        <div class="text-[30px] ">
+        <div class="lg:text-[35px] md:text-[20px] xs:text-[16px] ">
         บทเรียนทั้งหมด
         </div>
         </div>
@@ -40,16 +40,16 @@ export default function LessonAll() {
         objectFit: 'cover'
       }}
     />
-    <div class="absolute top-0  right-0 bg-[#939185] z-555 p-[5px] text-[#FFFFFF] ">{item.head}</div>
+    <div class="absolute top-0  right-0 bg-[#939185] z-555 p-[5px] text-[#FFFFFF] lg:text-[18px] md:text-[16px] xs:text-[14px]">บทที่ {index+1}</div>
     <div className="flex flex-col justify-between absolute bottom-0 translate-y-full group-hover:translate-y-0 bg-[#45474B] p-[5px] text-[#FFFFFF] w-full h-[50%] transition-all duration-300">
-        <div class="flex justify-center pt-3 text-[#EEEDEB] text-[18px]">
+        <div class="flex justify-center pt-3 text-[#EEEDEB] lg:text-[18px] md:text-[14px] xs:text-[12px] text-center">
         {item.title}
         </div>
         <div class="flex justify-between">
-        <div class="bg-[#8D493A] p-0.5 px-2 rounded-3xl">
+        <div class="bg-[#8D493A] p-0.5 px-2 rounded-3xl lg:text-[16px] md:text-[12px] xs:text-[10px]">
         By Siriwan Suksawat
         </div>
-        <div class="text-[#EEEDEB]">
+        <div class="text-[#EEEDEB] lg:text-[18px] md:text-[14px] xs:text-[12px]">
         คลิกเพื่อเข้าสู่เนื้อหา
         </div>
         </div>
