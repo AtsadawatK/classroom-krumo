@@ -54,11 +54,12 @@ if (!FilterLesson) {
     </div>
     <div className='text-[30px] pt-8'>
     สื่อการเรียนการสอน
+    
     </div>
     <div className='text-[40px] border border-[#2F3645] w-[100%] mt-2 '>
     <div className='grid grid-cols-5 '>
        {FilterPDFLesson.map((item,index) => (
-      <div key={index} className="flex justify-center items-center flex-col my-6" onClick={() => { window.location.href = `/lesson/${FilterLesson.urlLesson}/${item.name}`; }}>
+      <div key={index} className="flex justify-center items-center flex-col my-6" onClick={() => { window.open(`/lesson/${FilterLesson.urlLesson}/${item.name}`, "_blank");}}>
         <div className='border w-[150px] h-[150px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]'>
         <div>
       
@@ -77,7 +78,7 @@ if (!FilterLesson) {
 
 {FilterGameList.map((item, index) => (
   <div key={index} className="flex justify-center items-center flex-col my-6">
-    <div className='border w-[150px] h-[150px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]' onClick={() => { window.location.href = item.url }}>
+    <div className='border w-[150px] h-[150px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]' onClick={() => { window.open(item.url) }}>
       <div>
         <FcPuzzle style={{ width: "60px", height: "60px" }} />
       </div>
@@ -97,7 +98,7 @@ if (!FilterLesson) {
 
 {FilterVdoList.map((item,index) => (
       <div key={index} className="flex justify-center items-center flex-col my-6" >
-        <div className='border w-[150px] h-[150px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]' onClick={() => { window.location.href = item.url }}>
+        <div className='border w-[150px] h-[150px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]' onClick={() => { window.open(item.url) }}>
         <div>
       
           <div>
@@ -144,7 +145,7 @@ if (!FilterLesson) {
           </div>
           <a href={item.url} download>
           <button type="button" class="inline-flex items-center border text-[14px] px-5 py-1 rounded-full mt-2">
-          <IoMdDownload />คลิก</button>
+          <IoMdDownload />ดาวน์โหลด</button>
           </a>
           </div>
 ))} 
@@ -160,7 +161,7 @@ if (!FilterLesson) {
     <div className='text-[40px] border border-[#2F3645] w-[100%] mt-2'>
     <div className='grid grid-cols-5'>
     {FilterWorkList .map((item,index) => (
-      <div key={index} className="flex justify-center items-center flex-col my-6" onClick={() => { window.location.href = `/lesson/${FilterLesson.urlLesson}/work/${item.name}`; }}>
+      <div key={index} className="flex justify-center items-center flex-col my-6" onClick={() => { window.open (`/lesson/${FilterLesson.urlLesson}/work/${item.name}`,"_blank"); }}>
         <div className='border w-[150px] h-[150px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]'>
         <div>
       
