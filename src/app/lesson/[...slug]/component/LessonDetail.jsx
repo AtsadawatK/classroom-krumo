@@ -43,6 +43,7 @@ if (!FilterLesson) {
   };
 
   
+  
   return (
   <>
   
@@ -59,7 +60,7 @@ if (!FilterLesson) {
     <div className='text-[40px] border border-[#2F3645] w-[100%] mt-2 '>
     <div className='grid lg:grid-cols-5 sm:grid-cols-3 xs:grid-cols-2'>
        {FilterPDFLesson.map((item,index) => (
-      <div key={index} className="flex justify-center items-center flex-col my-6" onClick={() => { window.location.href = `/lesson/${FilterLesson.urlLesson}/${item.head}`, "_blank";}}>
+      <div key={index} className="flex justify-center items-center flex-col my-6" onClick={() => { window.open (`/${item.urlPDFfile}`, "_blank");}}>
         <div className='border sm:w-[150px] sm:h-[150px] xs:w-[100px] xs:h-[100px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]'>
         <div>
       
@@ -68,11 +69,11 @@ if (!FilterLesson) {
           </div>
     </div>
           <div className='text-[12px] mt-[10px] text-center' >
-          {item.name}
+          {item.name} 
           </div>
           </div>
           <button type="button" class="inline-flex items-center border text-[14px] px-5 py-1 rounded-full mt-2">
-          <IoMdDownload />ดาวน์โหลด</button>
+          <IoMdDownload />เปิด</button>
           </div>
 ))} 
 
@@ -145,7 +146,7 @@ if (!FilterLesson) {
           </div>
           <a href={item.url} download>
           <button type="button" class="inline-flex items-center border text-[14px] px-5 py-1 rounded-full mt-2">
-          <IoMdDownload />ดาวน์โหลด</button>
+          <IoMdDownload />เปิด</button>
           </a>
           </div>
 ))} 
@@ -161,7 +162,7 @@ if (!FilterLesson) {
     <div className='text-[40px] border border-[#2F3645] w-[100%] mt-2'>
     <div className='grid lg:grid-cols-5 sm:grid-cols-3 xs:grid-cols-2 '>
     {FilterWorkList .map((item,index) => (
-      <div key={index} className="flex justify-center items-center flex-col my-6" onClick={() => { window.location.href = `/lesson/${FilterLesson.urlLesson}/work/${item.head}`,"_blank"; }}>
+      <div key={index} className="flex justify-center items-center flex-col my-6" onClick={() => { window.open (`/${item.urlPDFfile}`, "_blank");}} >
         <div className='border sm:w-[150px] sm:h-[150px] xs:w-[100px] xs:h-[100px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]'>
         <div>
       
@@ -174,13 +175,13 @@ if (!FilterLesson) {
           </div>
           </div>
           <button type="button" class="inline-flex items-center border text-[14px] px-5 py-1 rounded-full mt-2">
-          <IoMdDownload />ดาวน์โหลด</button>
+          <IoMdDownload />เปิด</button>
           </div>
 ))} 
 
 
 {FilterWorklink.map((item,index) => (
-      <div key={index} className="flex justify-center items-center flex-col my-6" onClick={() => { window.location.href = item.url; }}>
+      <div key={index} className="flex justify-center items-center flex-col my-6" onClick={() => { window.open (item.url); }}>
         <div className='border sm:w-[150px] sm:h-[150px] xs:w-[100px] xs:h-[100px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]'>
         <div>
       
@@ -193,7 +194,7 @@ if (!FilterLesson) {
           </div>
           </div>
           <button type="button" class="inline-flex items-center border text-[14px] px-5 py-1 rounded-full mt-2">
-          <IoMdDownload />คลิก</button>
+          <IoMdDownload />เปิด</button>
           </div>
 ))} 
 

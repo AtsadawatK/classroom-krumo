@@ -1,19 +1,18 @@
 // next.config.js
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.module.rules.push({
-        test: /\.mjs$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['next/babel'],
+  async headers() {
+    return [
+      {
+        source: '/docs/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate',
           },
-        },
-      });
-    }
-    return config;
+        ],
+      },
+    ];
   },
 };
 

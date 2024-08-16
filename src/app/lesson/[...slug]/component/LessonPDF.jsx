@@ -12,7 +12,11 @@ export default function LessonPDF({params}) {
   
   const PDFName = decodeURIComponent(params.slug[1]);
 
- 
+  const [iframeLoaded, setIframeLoaded] = useState(true);
+
+  const handleError = () => {
+    setIframeLoaded(false);
+  };
 
   const FilterPDFLesson = PDFlist.find(data => data.head === PDFName);
 
@@ -34,11 +38,31 @@ export default function LessonPDF({params}) {
 
 
 
-    <div class="lg:px-[80px] md:px-[30px] xs:px-[20px] h-[85%]">
-    <iframe src={`${FilterPDFLesson.urlPDFfile}#zoom=50`} type="application/pdf" width="100%" height="100%"></iframe>
-
-</div>
-
+    <div className="lg:px-[80px] md:px-[30px] xs:px-[20px] h-[85%]">
+      {iframeLoaded ? (
+        <iframe
+          src={`${FilterPDFLesson.urlPDFfile}#zoom=50`}
+          type="application/pdf"
+          width="100%"
+          height="100%"
+          onError={handleError}
+          style={{ border: 'none' }}
+          title="PDF Viewer"
+        ></iframe>
+      ) : (
+        <div>
+          <h1>View PDF</h1>
+          <a
+            href={FilterPDFLesson.urlPDFfile}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: 'block', marginTop: '10px' }}
+          >
+            Click here to view the PDF
+          </a>
+        </div>
+      )}
+    </div>
 
 
     </div>
