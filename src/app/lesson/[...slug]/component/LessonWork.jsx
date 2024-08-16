@@ -14,7 +14,7 @@ export default function LessonWork({params}) {
     console.log("URLName :" ,PDFName)
     console.log("PDF List : ",Worklist)
 
-  const FilterPDFLesson = Worklist.find(data => data.name === PDFName);
+  const FilterPDFLesson = Worklist.find(data => data.head === PDFName);
   console.log("Filter PDF List : ",FilterPDFLesson)
 
   return (
@@ -31,7 +31,7 @@ export default function LessonWork({params}) {
 
 
 <div class=" lg:px-[80px] md:px-[30px] xs:px-[20px]  h-[85%]">
- <embed src={FilterPDFLesson.urlPDFfile} type="application/pdf" width="100%" height="100%" /> 
+<a href={FilterPDFLesson.urlPDFfile}>ดููเอกสาร</a>
 </div>
 
 

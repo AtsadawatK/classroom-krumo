@@ -1,7 +1,7 @@
 "use client"
 
-import {  useState } from 'react';
-import { PDFlist, } from '../../../../dataLesson/DataLesson'
+import {  useState,useEffect } from 'react';
+import { PDFlist } from '../../../../dataLesson/DataLesson'
 
 
 import './sample.css';
@@ -9,13 +9,13 @@ import './sample.css';
 
 
 export default function LessonPDF({params}) {
+  
   const PDFName = decodeURIComponent(params.slug[1]);
 
-    console.log("URLName :" ,PDFName)
-    console.log("PDF List : ",PDFlist)
+ 
 
-  const FilterPDFLesson = PDFlist.find(data => data.name === PDFName);
-  console.log("Filter PDF List : ",FilterPDFLesson)
+  const FilterPDFLesson = PDFlist.find(data => data.head === PDFName);
+
 
   return (
     <>
@@ -30,13 +30,15 @@ export default function LessonPDF({params}) {
     </div>
 
 
-    <div class="lg:flex xs:hidden lg:px-[80px] md:px-[30px] xs:px-[20px] h-[85%]">
-     <embed src={FilterPDFLesson.urlPDFfile} type="application/pdf" width="100%" height="100%" /> 
-    </div>
+   
 
-    <div class="xs:flex lg:hidden lg:px-[80px] md:px-[30px] xs:px-[20px] h-[85%]">
-     <embed src={`${FilterPDFLesson.urlPDFfile}#zoom=50`} type="application/pdf" width="100%" height="100%" /> 
-    </div>
+
+
+    <div class="lg:px-[80px] md:px-[30px] xs:px-[20px] h-[85%]">
+    <iframe src={`${FilterPDFLesson.urlPDFfile}#zoom=50`} type="application/pdf" width="100%" height="100%"></iframe>
+
+</div>
+
 
 
     </div>

@@ -59,7 +59,7 @@ if (!FilterLesson) {
     <div className='text-[40px] border border-[#2F3645] w-[100%] mt-2 '>
     <div className='grid lg:grid-cols-5 sm:grid-cols-3 xs:grid-cols-2'>
        {FilterPDFLesson.map((item,index) => (
-      <div key={index} className="flex justify-center items-center flex-col my-6" onClick={() => { window.open(`/lesson/${FilterLesson.urlLesson}/${item.name}`, "_blank");}}>
+      <div key={index} className="flex justify-center items-center flex-col my-6" onClick={() => { window.location.href = `/lesson/${FilterLesson.urlLesson}/${item.head}`, "_blank";}}>
         <div className='border sm:w-[150px] sm:h-[150px] xs:w-[100px] xs:h-[100px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]'>
         <div>
       
@@ -161,7 +161,7 @@ if (!FilterLesson) {
     <div className='text-[40px] border border-[#2F3645] w-[100%] mt-2'>
     <div className='grid lg:grid-cols-5 sm:grid-cols-3 xs:grid-cols-2 '>
     {FilterWorkList .map((item,index) => (
-      <div key={index} className="flex justify-center items-center flex-col my-6" onClick={() => { window.open (`/lesson/${FilterLesson.urlLesson}/work/${item.name}`,"_blank"); }}>
+      <div key={index} className="flex justify-center items-center flex-col my-6" onClick={() => { window.location.href = `/lesson/${FilterLesson.urlLesson}/work/${item.head}`,"_blank"; }}>
         <div className='border sm:w-[150px] sm:h-[150px] xs:w-[100px] xs:h-[100px] flex justify-center items-center flex-col cursor-pointer hover:border-2 hover:border-[#2F3645]'>
         <div>
       
